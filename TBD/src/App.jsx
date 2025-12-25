@@ -1,27 +1,16 @@
-import Home from './components/Home/Home'
-import Login from './components/Login/Login'
-import Signup from './components/Signup/Signup'
-import Contact from './components/Contact/Contact'
-import About from './components/About/About'
-import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from 'react-router-dom'
-
-
+import Footer from "./components/Footer/Footer"
+import Header from "./components/Header/Header"
+import {Outlet} from 'react-router-dom'
+import './App.css'
 function App() {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path='/' element={<App />}>
-        <Route path='' element={<Home />}/>
-        <Route path='login' element={<Login />}/>
-        <Route path='signup' element={<Signup />}/>
-        <Route path='contact' element={<Contact />}/>
-        <Route path='about' element={<About />}/>
 
-      </Route>
-    )
+  return (
+    <>
+      <Header/>
+      <Outlet/>
+      <Footer/>
+    </>
   )
-
-  return <RouterProvider router={router} />
 }
-
 
 export default App
